@@ -2,7 +2,6 @@ import csv
 import pixel_utils
 import cv2
 import os
-from pymediainfo import MediaInfo
 def tracks_to_csv(txt_file):
     file1 = open(txt_file, "r+")
     # Read from file log and write to nLog file

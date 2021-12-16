@@ -1,4 +1,3 @@
-
 import os
 import csv
 import cv2
@@ -6,7 +5,7 @@ from sklearn.cluster import AgglomerativeClustering
 from numpy.linalg import norm
 import numpy as np
 from sklearn.cluster import KMeans
-from sklearn.metrics import pairwise_distances, confusion_matrix
+from sklearn.metrics import pairwise_distances
 
 
 # method to calculate distance between two samples
@@ -179,25 +178,3 @@ def create_dict_for_labels(track_labels, results_path):
     for index, f_name in enumerate(track_id_list):
         track_dict[f_name] = track_labels[index]
     return track_dict
-
-
-"""results_path = 'testing/classroom/class_static/'
-#results_path = 'testing/Episodes/512d_BBT_S01_E03/'
-Video = "bbt_s01e03"
-#512d_Buffy_S05_E01, 512d_BBT_S01_E01, buffy_s05e01, bbt_s01e05
-gt_cluster_nr = 22
-own_cluster_nr = round(gt_cluster_nr * 1)
-track_labels, avg_embs_list, track_list = hac(results_path + "/track_embs/", own_cluster_nr,  "sim_affinity")#sim_affinity, euclidean
-#track_labels, avg_embs_list, track_list = k_means(results_path + "/track_embs/", own_cluster_nr)#sim_affinity, euclidean
-#track_labels = selective_search("testing/SelectiveSearch/BBT2/", os.path.join(results_path, 'track_embs/'), 0.3)
-#y_gt = check_missing_tracks(track_list, Video)
-#print(track_labels)
-#update_sample_imgs_clusters(results_path, avg_embs_list, track_labels, own_cluster_nr)
-#evaluate(y_gt, track_labels, Video)
-#check_missing_clusters(y_gt, track_labels, Video, gt_cluster_nr, own_cluster_nr)
-
-track_labels = create_dict_for_labels(track_labels, results_path)
-create_det_with_ids(track_labels, results_path + "class_static_tracks.csv")
-#create_det_with_ids_original_tracks(track_labels, results_path, track_list)
-
-#selective_search("testing/SelectiveSearch/", "testing/Episodes/bbt_1_test/track_embs/")"""

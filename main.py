@@ -21,6 +21,8 @@ if __name__ == '__main__':
 
     #create folder to store outputs
     working_dir = os.path.join(dir_path, 'output')
+    if not os.path.exists(working_dir):
+        os.mkdir(working_dir)
     f_name, f_ext = os.path.splitext(os.path.basename(video_path))
     output_dir = os.path.join(working_dir, f_name)
     os.mkdir(output_dir)
@@ -34,8 +36,12 @@ if __name__ == '__main__':
     #input association
     if association_method == '1':
 
-        cluster_nr = float(input("Enter a similarity threshold between 0 and 1: \n"
-                           "(A low threshold value will increase rate of pixelation but also number of falsely pixelated faces. For a high threshold the opposite applies.)"))
+        change_sim = input("Change similarity threshold?(y/n) (Default: 0.3)")
+        if change_sim == "y":
+            sim_threshold = float(input("Enter a similarity threshold between 0 and 1: \n"
+                               "(A low threshold value will increase rate of pixelation but also number of falsely pixelated faces. For a high threshold the opposite applies.)"))
+        else:
+            sim_threshold = 0.3
         print("Sample images of persons to be pixelated should be located in: " + os.path.join(dir_path, 'input_imgs')
               + "(Images of each face from multiple angles may lead to better results.)")
         proceed = input("Proceed? (y/n)")
@@ -53,7 +59,7 @@ if __name__ == '__main__':
         sample_img_path = os.path.join(dir_path, 'input_imgs')
         print(sample_img_path)
         target_emb_list = association_utils.create_npy_from_imgs(sample_img_path, meta_path)
-        labels = input_association.associate_by_input_no_skip(target_emb_list, meta_path, 0.3)
+        labels = input_association.associate_by_input_no_skip(target_emb_list, meta_path, sim_threshold)
         print('labels', labels)
         pix_vid_mute = create_output.pixelate_tracks_input(video_path, tracks_path, labels)
         create_output.add_audio(pix_vid_mute, video_path, output_dir)
@@ -92,6 +98,3 @@ if __name__ == '__main__':
         create_output.add_audio(pix_vid_mute, video_path, output_dir)
 
     print("Finished pixelation. New Video is located in: " + output_dir)
-while not (1 < 3 < 4):
-    print('here')
-
