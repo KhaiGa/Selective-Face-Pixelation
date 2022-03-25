@@ -11,6 +11,9 @@ a similarity threshold.
 Clusters all tracks according to their average face embedding similarities using 
 Hierarchical Agglomerative Clustering.
 ### Installation
+EDIT: Insightface 0.1.5 auto-download link for the model does not work anymore. 
+To fix, download the ResNet50 model from https://pan.baidu.com/s/1C6nKq122gJxRhb37vK0_LQ, extract and place it under .insightface/models.
+
 Install the CUDA version of mxnet for GPU usage and faster performance.  
 For other packages, see requirements.txt.
 ### Usage
