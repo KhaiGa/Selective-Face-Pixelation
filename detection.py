@@ -25,8 +25,9 @@ def create_det_file(video_path, meta_path):
         while success:
             success, frame = cap.read()
             #print progress
-            sys.stdout.write("\r%d%%" % float(frame_nr/total_frame_nr))
-            sys.stdout.flush()
+            print(frame_nr, "/", total_frame_nr)
+            #sys.stdout.write("\r%d%%" % float(frame_nr/total_frame_nr))
+            #sys.stdout.flush()
             if not success:
                 break
             all_bboxes, all_landmarks = model.detect(frame, threshold=0.75, scale=1.0)

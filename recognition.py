@@ -122,11 +122,8 @@ def create_tracks_and_emb_file(video_path, meta_path):
                             if track.last_seen_frame < current_frame_number - 10:
                                 archived_track_list.append(track)
                                 active_track_list.remove(track)
-                        print('archived len : ', len(archived_track_list))
-                        print('active len : ', len(active_track_list))
                         tracks_line = ','.join(map(str, tracks_line))
                         if current_frame_number is not None:
-                            print('tracksLine', tracks_line)
                             tracks_file.write(tracks_line)
                             tracks_file.write('\n')
                             tracks_file.flush

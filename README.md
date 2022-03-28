@@ -11,9 +11,10 @@ a similarity threshold.
 Clusters all tracks according to their average face embedding similarities using 
 Hierarchical Agglomerative Clustering.
 ### Installation
-EDIT: Insightface 0.1.5 auto-download link for the model does not work anymore. 
-To fix, download the ResNet50 model from https://pan.baidu.com/s/1C6nKq122gJxRhb37vK0_LQ, extract and place it under .insightface/models.
-
+EDIT: Insightface 0.1.5 auto-download link for detection and recognition models do not work anymore. 
+To fix, download the RetinaFace-R50 model (Detection) and R100 mxnet model (Recognition) from [here](https://github.com/deepinsight/insightface/tree/master/model_zoo)
+, extract and copy files to .insightface/models/retinaface_r50_v1 and .insightface/models/arcface_r100_v1, respectively. <br/>
+Download and install ffmpeg from here: https://www.ffmpeg.org/download.html <br/>
 Install the CUDA version of mxnet for GPU usage and faster performance.  
 For other packages, see requirements.txt.
 ### Usage
