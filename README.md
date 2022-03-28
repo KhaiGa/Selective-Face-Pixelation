@@ -3,7 +3,7 @@
 ### Introduction
 Pixelate individual faces (while retaining all others) in videos by using one of two face association methods: **Input Association**
 or **Cluster Association**.  
-Face Detection and Recognition utilize the InsightFace python-library.
+Face Detection and Recognition utilize the [InsightFace](https://github.com/deepinsight/insightface) python-library.
 ##### Input Association:
 Compares input images of target faces to all face tracks and pixelates those with a feature similarity above 
 a similarity threshold. 
