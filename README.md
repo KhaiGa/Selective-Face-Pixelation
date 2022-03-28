@@ -32,4 +32,10 @@ increase the rate of pixelations of non-target faces. Increasing the similarity 
 effect.
 
 ##### Cluster Association:
-Coming soon...
+This method uses no example images, but instead requires an estimation
+of the number of different faces appearing in the video.
+After grouping all faces into the specified number of clusters, an
+example image of each identity is saved to the output folder.
+Selected persons will be pixelated. <br/>
+(Tip: Increasing the number may lead to more accurate results, at the cost of 
+slightly more supervision.)
