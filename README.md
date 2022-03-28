@@ -1,7 +1,7 @@
 # Selective Face Pixelation
-
+![final](https://user-images.githubusercontent.com/50239198/160453937-971c49b3-7f31-4ea1-80bc-d32906ad2756.png)
 ### Introduction
-Pixelate individual faces in videos by using one of two face association methods: **Input Association**
+Pixelate individual faces (while retaining all others) in videos by using one of two face association methods: **Input Association**
 or **Cluster Association**.  
 Face Detection and Recognition utilize the InsightFace python-library.
 ##### Input Association:
